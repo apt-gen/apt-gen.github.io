@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=1024">
+    <!-- <title>APT-Gen</title> -->
+    <title>Adaptive Procedural Task Generation for Hard-Exploration Problems</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="./files/bootstrap.min.css">
+    <link rel="stylesheet" href="./files/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="./files/style.css">
+
+    <!-- Google fonts -->
+    <link href="./files/google-fonts.css" rel="stylesheet" type="text/css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-47054450-12"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-47054450-12');
+    </script>
+
+  </head>
+
+
+<body>
+<div class="container-fluid">
+
+  <center><font size="4"><br></font></center>
+
+  <center>
+    <span style="font-size:46px;font-weight:bold;">
+    Adaptive Procedural Task Generation </br> for Hard-Exploration Problems
+    </span>
+  </center>
+
+  <center><font size="4"><br><br></font></center>
+
+  <center>
+    <img src="./images/apt-gen-pull.gif">
+  </center>
+
+  <center><font size="4"><br><br></font></center>
+
+</div>
+
+
+<div class="row section highlight">
+  <div class="col-xs-6 col-xs-offset-3 text-justify">
+  <h3>Abstract</h3>
+  We introduce Adaptive Procedural Task Generation (APT-Gen), an approach to progressively generate a sequence of tasks as curricula to expedite reinforcement learning in hard-exploration problems. At the heart of our approach, a task generator learns to create tasks from a parameterized task space via a black-box procedural generation module. To enable curriculum learning in the absence of a direct indicator of learning progress, we propose to train the task generator by balancing the agent's performance in the generated tasks and their similarity to the target tasks. Through adversarial training, the task similarity is adaptively estimated by a task discriminator defined on the agent's behaviors, allowing the generated tasks to approximate target tasks of unknown parameterization or outside of the predefined task space. Our experiments on grid world and robotic manipulation task domains show that APT-Gen achieves substantially better performance than various existing baselines by generating tasks of rich variations.
+  </div>
+</div>
+
+<div class="row section">
+  <div class="col-xs-6 col-xs-offset-3 text-justify">
+    <h3>Task Execution</h3>
+
+    <center>
+      <h4>Manipulation-A</h4>
+      Push the blue can across the bridge.<br><br>
+      <img src="./images/push_id1.gif">
+    </center>
+
+    <center><font size="4"><br><br></font></center>
+    
+    <center>
+      <h4>Manipulation-B</h4>
+      Insert the blue can into the slot.<br><br>
+      <img src="./images/push_id2.gif">
+    </center>
+
+    <center><font size="4"><br><br></font></center>
+
+    <center>
+      <h4>Manipulation-C</h4>
+      Remove the obstacle and clear the path, then push the blue can to the
+      destination.<br><br>
+      <img src="./images/push_id3.gif">
+    </center>
+
+  </div>
+</div>
+
+<div class="row section highlight">
+  <div class="col-xs-6 col-xs-offset-3 text-justify">
+    <h3>Task Progression</h3>
+
+    <center>
+      <img src="./images/task-progression-grid-world-a.gif" width="640">
+    </center>
+
+    <center><font size="4"><br><br></font></center>
+
+    <center>
+      <img src="./images/task-progression-grid-world-b.gif" width="640">
+    </center>
+
+    <center><font size="4"><br><br></font></center>
+
+    <center>
+      <img src="./images/task-progression-grid-world-c.gif" width="640">
+    </center>
+
+    <center><font size="4"><br><br></font></center>
+    <center><font size="4"><br><br></font></center>
+
+    <center>
+      <img src="./images/task-progression-manipulation-a.gif" width="640">
+    </center>
+
+    <center><font size="4"><br><br></font></center>
+
+    <center>
+      <img src="./images/task-progression-manipulation-b.gif" width="640">
+    </center>
+
+    <center><font size="4"><br><br></font></center>
+
+    <center>
+      <img src="./images/task-progression-manipulation-c.gif" width="640">
+    </center>
+
+  </div>
+</div>
+
+<div class="row section">
+
+  <div class="col-xs-6 col-xs-offset-3 text-justify">
+    <h3>Out-of-Space Task</h3>
+    APT-Gen can be applied to target tasks that are outside of the parameterized task space predefined by the procedural generation module. To facilitate reinforcement learning in this challenging target task, APT-Gen progressively generates tasks that approximate complicated objects using elements provided by the procedural generation module.<br><br>
+    <center>
+      <img src="./images/task-progression-out-of-space.gif">
+    </center>
+  </div>
+
+</div>
+
+</body></html>
